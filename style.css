@@ -1,0 +1,397 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-size: 3.5vw;
+}
+
+/* navbar */
+
+nav {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background-color: #ecebeb;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 70px;
+  margin: 4px;
+}
+
+nav ul {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 2px;
+}
+nav ul li {
+  padding: 3px;
+  padding-bottom: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.call-btn {
+  background-color: rgba(139, 169, 92, 0.9);
+  color: #fff;
+  /* font-size: 1.2rem; */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Header */
+header {
+  width: 100%;
+  height: 90vh;
+  background: url(./assets/images/2022-09-23\ 12.14.02.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+header .header-content {
+  width: 45%;
+  height: 100%;
+  background: url(./assets/images/bg_bggenerator_com.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin-left: 5%;
+  text-align: center;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.header-content ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 2px;
+}
+
+.header-content h1 {
+  color: #f5f5f5;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: normal;
+}
+.header-content h2 {
+  color: #f5f5f5;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+}
+
+/* About Us */
+.about-us {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.about-us .info-cirlce {
+  height: 25%;
+  margin: 10px;
+}
+
+.about-us i {
+  background-color: rgba(141, 182, 77, 0.9);
+  color: #fff;
+  font-size: 12vw;
+  padding: 40px 40px;
+  border-radius: 100%;
+  margin-bottom: 20px;
+}
+
+/* gallery */
+
+.gallery {
+  color: #fff;
+  text-align: center;
+  background-color: rgba(144, 170, 121, 1);
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+.gallery h1 {
+  margin-top: 10px;
+}
+
+.gallery ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.gallery li {
+  height: 40vh;
+  flex-grow: 1;
+}
+
+.gallery img {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+.gallery .more-btn {
+  text-decoration: none;
+  color: #333;
+  background-color: #f5f5f5;
+  padding: 10px 50px;
+  border-radius: 5px;
+}
+
+/* Price-List */
+
+.price {
+  position: relative;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.price-boxes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.price ul {
+  width: 60vw;
+  background-color: rgba(0, 0, 0, 0.362);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid rgba(139, 169, 92, 0.9);
+  margin: 20px;
+}
+
+.price ul img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.price ul li {
+  list-style: none;
+  color: #fff;
+  padding: 50px 40px;
+}
+
+.price ul li a {
+  background-color: rgba(139, 169, 92, 0.9);
+  color: #fff;
+  font-size: 2.5vh;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* rewiev */
+
+.rewiev {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  background-color: rgba(144, 170, 121, 1);
+  color: #fff;
+}
+
+.rewiev h1 {
+  padding: 10px;
+}
+
+.rewiev img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  margin: 0px auto;
+}
+
+.rewiev .client-rewiev {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.rewiev .more-btn {
+  text-decoration: none;
+  background-color: #f5f5f5;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.rewiev .thanks {
+  margin: 25px;
+  padding-bottom: 10px;
+  color: #ecebeb;
+}
+
+/* Contacts */
+
+.contact {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.contact h1 {
+  margin: 10px;
+}
+
+.contact-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.map {
+  width: 80%;
+  margin: 10px;
+}
+
+.map img {
+  width: 100%;
+}
+
+.contact-details {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-details li {
+  padding: 5px;
+}
+
+/* Footer */
+
+footer {
+  background-color: rgba(144, 170, 121, 1);
+  color: #fff;
+  text-align: center;
+  height: 30vh;
+}
+
+@media (min-width: 751px) {
+  body {
+    font-size: 1.5vw;
+  }
+  /* navbar */
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+  }
+  nav ul li {
+    padding: 10px;
+  }
+  /* About Us */
+  .about-us {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .about-us i {
+    background-color: rgba(141, 182, 77, 0.9);
+    color: #fff;
+    font-size: 4.5vw;
+    padding: 40px 40px;
+    border-radius: 100%;
+    margin-bottom: 20px;
+  }
+
+  .about-us .info-cirlce {
+    width: 25%;
+    padding: 20px;
+  }
+
+  /* Price-list */
+
+  .price-boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .price ul {
+    width: 20vw;
+  }
+
+  /* Rewiev */
+  .rewiev {
+    height: 50vh;
+  }
+
+  /* Contact */
+  .contact-content {
+    flex-direction: row;
+  }
+
+  .map {
+    width: 50%;
+    margin: 10px;
+  }
+
+  .map img {
+    width: 100%;
+  }
+
+  .contact-details {
+    width: 50%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .contact-details li {
+    padding: 5px;
+  }
+}
