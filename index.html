@@ -17,19 +17,16 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
     <title>Origi&Nail</title>
   </head>
   <body>
     <!-- navbar -->
     <nav>
       <div class="logo">
-        <img
-          onclick="myFunction()"
-          src="./assets/images/HYFXiTIRbsc-4.jpg"
-          alt="logo"
-        />
+        <img src="./assets/images/Plugin icon - 1.png" />
       </div>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
       <ul id="myLinks">
         <li>
           <a href="#">Услуги</a>
@@ -46,16 +43,17 @@
             +375 29 652 44 88
           </a>
         </li>
-        <li>
-          <a class="call-btn" href="#">Записаться</a>
-        </li>
       </ul>
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+      <button onclick="openBook()" class="call-btn">Записаться</button>
     </nav>
     <!-- Header -->
     <header>
       <div class="header-content">
         <h1>Салон красоты</h1>
-        <h1>Origi&Nail</h1>
+        <h1><b>Origi&Nail</b></h1>
         <ul>
           <li><h2>Маникюр</h2></li>
           <li><h2>Педикюр</h2></li>
@@ -65,10 +63,10 @@
     </header>
     <!-- About Us Cirlce-->
     <div class="about-us">
-      <div class="info-cirlce">
+      <!-- <div class="info-cirlce">
         <i class="fa fa-map"></i>
         <h2>Ул. Габровская 32, ТЦ Санта, 2й этаж</h2>
-      </div>
+      </div> -->
       <div class="info-cirlce">
         <i class="fa fa-clock-o"></i>
         <h2>Ежедневно с 10.00 - 20.00</h2>
@@ -84,7 +82,7 @@
     </div>
     <!-- Gallery -->
     <div class="gallery">
-      <h1>Наши роботы</h1>
+      <h1>Наши работы</h1>
       <ul>
         <li>
           <img
@@ -119,19 +117,19 @@
           <img src="./assets/images/IMG_4737.jpg" alt="" />
           <li><h1>Маникюр</h1></li>
           <li><h2>от 100$</h2></li>
-          <li><a href="#">Все Цены</a></li>
+          <li><button onclick="openPrice('Маникюр')">Все Цены</button></li>
         </ul>
         <ul>
           <img src="./assets/images/IMG_20220919_123300_236.jpg" alt="" />
           <li><h1>Педикюр</h1></li>
           <li><h2>от 100$</h2></li>
-          <li><a href="#">Все Цены</a></li>
+          <li><button onclick="openPrice('Педикюр')">Все Цены</button></li>
         </ul>
         <ul>
           <img src="./assets/images/IMG_20220629_124922_471.jpg" alt="" />
           <li><h1>Брови</h1></li>
           <li><h2>от 100$</h2></li>
-          <li><a href="#">Все Цены</a></li>
+          <li><button onclick="openPrice('Брови')">Все Цены</button></li>
         </ul>
       </div>
     </div>
@@ -152,25 +150,99 @@
         Мы благодарны Вам за обратную связь! За Ваше доверие и теплоту!
       </p>
     </div>
-    <!-- Contact -->
-    <div class="contact">
-      <h1>Контакты</h1>
-      <div class="contact-content">
-        <div class="map">
-          <img
-            src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg"
-            alt="map"
-          />
-        </div>
-        <ul class="contact-details">
-          <li>Телефон: +312313131231</li>
-          <li>What'sApp: +312313131231</li>
-          <li>Telegram: +312313131231</li>
-          <li>Instagram: +312313131231</li>
+    <!-- Salons -->
+    <div class="salon">
+      <h1>Наши салоны</h1>
+      <div class="salon-photo">
+        <img src="https://media.istockphoto.com/id/1341429602/photo/hair-beauty-salon.jpg?b=1&s=170667a&w=0&k=20&c=0SSAsUsNeyVeTzMPHtz4A-kdr2zJYcNDOlyUlpZwGf8=" alt="salon photos" />
+      </div>
+      <div class="salon-content">
+        <ul class="salons-details">
+          <li>Ул. Габровская 32, ТЦ Санта, 2й этаж</li>
+          <li>Ул. Габровская 32, ТЦ Санта, 2й этаж</li>
         </ul>
+        <div class="phone-number">
+          <a>+312313131231</a>
+          <i class="fa-solid fa-phone"></i>
+        </div>
       </div>
     </div>
     <!-- Footer -->
-    <footer>All rights reserved</footer>
+    <footer>
+      <div class="logo-footer">
+        <img src="./assets/images/HYFXiTIRbsc-4.jpg" alt="logo" />
+      </div>
+      <div class="business-info">
+        <a>ИП Панина Зоя Петровна</a>
+        <a>ИНН 501814716423</a>
+        <a>ОГРНИП 316501800062091</a>
+      </div>
+      <div class="business-links">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Публичная оферта</a>
+        <a href="#">Правила оплаты</a>
+      </div>
+      <div class="rights">
+        <h4>
+          <i class="fa-solid fa-copyright"></i>
+          Все права защищены
+        </h4>
+      </div>
+    </footer>
+    <!-- Fullscreen pop up -->
+    <div class="pop-up hidden">
+      <div class="bar">
+        <button onClick="closePrice()">X</button>
+      </div>
+      <div class="caption">
+        <h1 id="tableName">Маникюр</h1>
+      </div>
+      <img src="./assets/images/IMG_20220706_111416_036.jpg" />
+      <table>
+        <thead>
+          <tr>
+            <td class="name">Услуга</td>
+            <td class="priceVal">Цена</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="name">Маникюр</td>
+            <td class="priceVal">100$</td>
+          </tr>
+          <tr>
+            <td class="name">Маникюр</td>
+            <td class="priceVal">100$</td>
+          </tr>
+          <tr>
+            <td class="name">Маникюр</td>
+            <td class="priceVal">100$</td>
+          </tr>
+          <tr>
+            <td class="name">Маникюр</td>
+            <td class="priceVal">100$</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="book hidden">
+      <div class="bar">
+        <button onclick="closeBook()" class="closeBtn">X</button>
+      </div>
+      <form >
+        <h1>Укажите Ваше имя и телефон и мы свяжемся с вами!</h1>
+        <label for="name">Имя</label>
+        <input id="nameUser" type="text" placeholder="Ваше имя" required/>
+        <label for="tel">Ваш номер телефона</label>
+        <input
+          id="telUser"
+          type="tel"
+          name="tel"
+          placeholder="(000) 000-0000"
+          required
+        />
+        <button type="submit"">Записаться</button>
+      </form>
+    </div>
   </body>
 </html>
