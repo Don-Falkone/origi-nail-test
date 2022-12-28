@@ -18,7 +18,16 @@ form.addEventListener("submit", (e) => sendMsg(e));
 rightBtn.addEventListener("click", () => changePhoto(1));
 leftBtn.addEventListener("click", () => changePhoto(-1));
 
+function noScroll() {
+  window.scrollTo(0, 0);
+}
+
+// add listener to disable scroll
+
+// Remove listener to re-enable scroll
+
 function openPrice(name) {
+  window.addEventListener("scroll", noScroll);
   const popUp = document.querySelector(".pop-up");
   document.getElementById("tableName").textContent = name;
   popUp.classList.remove("hidden");
@@ -27,9 +36,11 @@ function openPrice(name) {
 function closePrice() {
   const popUp = document.querySelector(".pop-up");
   popUp.classList.add("hidden");
+  window.removeEventListener("scroll", noScroll);
 }
 
 function openBook() {
+  window.addEventListener("scroll", noScroll);
   const popUp = document.querySelector(".book");
   popUp.classList.remove("hidden");
 }
@@ -37,6 +48,7 @@ function openBook() {
 function closeBook() {
   const popUp = document.querySelector(".book");
   popUp.classList.add("hidden");
+  window.removeEventListener("scroll", noScroll);
 }
 
 function sendMsg(event) {
