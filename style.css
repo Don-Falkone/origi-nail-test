@@ -320,7 +320,7 @@ header .header-content {
   padding: 1rem;
   background-color: rgba(144, 170, 121, 1);
   position: relative;
-  height: 85vh;
+  height: 100vh;
 }
 
 .gallery #slider-logo {
